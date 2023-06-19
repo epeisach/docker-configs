@@ -1,0 +1,15 @@
+This builds a base OneDep tools run time environment for test installation
+of the python code under Alma Linux.
+
+This does not provide the full runtime environment.
+
+Compile:
+
+docker build -t harbor.devops.k8s.rcsb.org/ezra-test/onedep-base:alma8.0.0 .
+
+Use as:
+
+docker run --mount type=bind,source=`pwd`/tools-alma-8,target=/tools,readonly -v `pwd`/site-config:/site-config -v `pwd`/onedep_admin:/onedep_admin --name t1 -ti epeisach/onedep-base:7.0.0 bash
+
+
+
