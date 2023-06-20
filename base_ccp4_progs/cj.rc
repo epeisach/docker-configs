@@ -1,0 +1,11 @@
+# Use system tools for the following
+skip += ['libtool', 'cmake']
+skip += ['bzr']
+skip += ['automake']
+
+# Number of parallel jobs
+jobs = 2
+
+#prefix = os.path.join('/net/users/peisach/Dev/EDMaps2/install')
+# Change later
+prefix = os.path.join('/tmp/ccp4')

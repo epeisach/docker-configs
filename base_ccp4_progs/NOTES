@@ -1,0 +1,16 @@
+centos 7:
+
+source site-config/....
+
+CreateBuild.sh creates ccp4-progs-`date`.tar.gz for use
+
+
+cj.rc: -- configures where to build
+
+/net/users/peisach/Dev/EDMaps2
+
+
+# ./devtools/cj  update ccp4-progs
+./devtools/cj -no-interact build ccp4-progs
+
+
