@@ -12,6 +12,12 @@ RUN yum -y install python3 python3-configobj
 # mmysql-devel for wwpdb.utils.db (should be mariadb)
 RUN yum -y install mysql-devel
 #RUN yum -y install mariadb-devel
+
+# for mysql_config to run - which requires our "rpm" to run
+RUN yum -y install nss
+
+# For installation emda
+RUN yum -y install gcc-gfortran
 # Cleanup
 RUN yum clean all
 
