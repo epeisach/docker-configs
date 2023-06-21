@@ -5,11 +5,13 @@ RUN yum -y install wget
 RUN yum -y install tcsh lsof gcc gcc-c++ bison flex make
 # RUN yum install rsync cvs subversion git
 
-# Mariadb-dev?
 
 # python3 for site-config
 RUN yum -y install python3 python3-configobj
 
+# mmysql-devel for wwpdb.utils.db (should be mariadb)
+RUN yum -y install mysql-devel
+#RUN yum -y install mariadb-devel
 # Cleanup
 RUN yum clean all
 
