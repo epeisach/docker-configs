@@ -1,4 +1,4 @@
-FROM ubuntu as builder
+FROM ubuntu:22.10 as builder
 
 RUN apt-get -qq update
 
@@ -21,7 +21,7 @@ RUN (cd ccp4-progs; export JHBUILD_RUN_AS_ROOT=1; export LD_LIBRARY_PATH=.;  ./d
 
 #######################
 #
-FROM ubuntu
+FROM ubuntu:22.10
 
 RUN apt-get -qq update
 RUN apt-get -qq -y install libgfortran5
@@ -29,4 +29,5 @@ RUN apt-get -qq -y install libgfortran5
 RUN mkdir -p /opt/ccp4
 COPY --from=builder /opt/ccp4 /opt/ccp4
 
-
+# Setup license
+RUN /opt/ccp4/BINARY.setup --run-from-script --minimal

@@ -14,3 +14,4 @@ cj.rc: -- configures where to build
 ./devtools/cj -no-interact build ccp4-progs
 
 
+docker build -t harbor.devops.k8s.rcsb.org/ezra-test/base-ccp4:0.1 .
